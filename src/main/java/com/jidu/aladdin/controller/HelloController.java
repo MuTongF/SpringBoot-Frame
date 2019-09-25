@@ -1,5 +1,6 @@
 package com.jidu.aladdin.controller;
 
+import com.jidu.aladdin.common.PageResult;
 import com.jidu.aladdin.entity.admin.AdminDemo;
 import com.jidu.aladdin.service.admin.AdminService;
 import io.swagger.annotations.ApiOperation;
@@ -25,7 +26,7 @@ public class HelloController {
 
     @ApiOperation("这是一个demo")
     @PostMapping("/demo")
-    public List<AdminDemo> demo(){
-        return adminService.getAllAdminList();
+    public PageResult<AdminDemo> demo(PageResult pageResult){
+        return adminService.getAllAdminList(pageResult);
     }
 }

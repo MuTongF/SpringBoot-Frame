@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+</head>
+<body>
+<!--头部导航-->
+<div id="navbar" th:fragment="navbar" class="navbar navbar-default          ace-save-state">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left">
+            <a href="index" class="navbar-brand">
+                <small>
+                    <!--<img src="assets/images/logo/logo.png" style="max-height: 25px" th:src="@{/assets/images/logo/logo.png}">-->
+
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+
+
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" th:src="@{/assets/images/logo/logo.png}" src="http://thirdwx.qlogo.cn/mmopen/vi_32/vIBicICtcibNYJ45UqfnibjgtGAjDqr4z1yHniaBe15otXO3sUXia0xWhm4GM8icDKQmxjBB0wDEhEOoRkm5UIGZEccg/132" />
+                        <span class="user-info">
+									<small>Welcome,</small>
+                                    <span  th:if="${session.userinfo!=null}" th:text="${session.userinfo.username}"></span>
+
+								</span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+                        <!--分割线-->
+                        <!--<li class="divider"></li>-->
+
+                        <li>
+                            <a href="#" th:href="@{/back/login}">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<!--左边导航-->
+<div id="sidebar" th:fragment="sidebar" class="sidebar                  responsive                    ace-save-state">
+    <script type="text/javascript">
+        try{ace.settings.loadState('sidebar')}catch(e){}
+    </script>
+
+
+    <ul class="nav nav-list">
+        <li class="" th:class="${activeUri=='首页'?'active':''}">
+            <a href="index" th:href="@{/back/index}">
+                <i class="menu-icon fa fa-tachometer"></i>
+                <span class="menu-text"> 首页 </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="" th:class="${open=='用户管理'?'active open':''}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon glyphicon glyphicon-user"></i>
+                <span class="menu-text">
+								用户管理
+							</span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+                <li class="" th:class="${activeUri=='用户列表'?'active':''}">
+                    <a th:href="@{/back/users}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        用户列表
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="" th:class="${activeUri=='静态收益'?'active':''}">
+                    <a th:href="@{/back/static_return}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        静态收益
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="" th:class="${activeUri=='动态收益'?'active':''}">
+                    <a th:href="@{/back/dynamic_return}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        动态收益
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="" th:class="${activeUri=='今日激活'?'active':''}">
+                    <a th:href="@{/back/today_registration}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        今日激活
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
+
+
+
+        <li class=""  th:class="${open=='平台管理'?'active open':''}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-tags"></i>
+                <span class="menu-text">平台管理</span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="" th:class="${activeUri=='匹配管理'?'active':''}">
+                    <a th:href="@{/back/platform}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        匹配管理
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="" th:class="${activeUri=='实名审核'?'active':''}">
+                    <a th:href="@{/back/user_card}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        实名审核
+                    </a>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+            </ul>
+        </li>
+
+    </ul><!-- /.nav-list -->
+
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+</div>
+
+<!--底部-->
+<div class="footer"  th:fragment="footer">
+    <div class="footer-inner">
+        <div class="footer-content">
+						<!--<span class="bigger-120">
+							<span class="blue bolder">几度科技</span>
+							&copy; 2019-09
+						</span>-->
+
+            &nbsp; &nbsp;
+            <!--<span class="action-buttons">-->
+            <!--<a href="#">-->
+            <!--<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>-->
+            <!--</a>-->
+
+            <!--<a href="#">-->
+            <!--<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>-->
+            <!--</a>-->
+
+            <!--<a href="#">-->
+            <!--<i class="ace-icon fa fa-rss-square orange bigger-150"></i>-->
+            <!--</a>-->
+            <!--</span>-->
+        </div>
+    </div>
+</div>
+
+<!--回到顶部-->
+<a href="#" id="btn-scroll-up" th:fragment="top" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+</a>
+
+
+
+
+</body>
+</html>
