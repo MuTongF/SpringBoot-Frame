@@ -20,6 +20,9 @@ public class MyWebConfigurer implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
+        // 放掉swagger-ui.html,部署了项目名后访问不到的bug
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations(
+                "classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations(
                 "classpath:/META-INF/resources/webjars/");
         //配置图片访问路径
