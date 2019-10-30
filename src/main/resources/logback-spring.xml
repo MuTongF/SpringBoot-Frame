@@ -29,7 +29,7 @@
         <!--滚动策略-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--按时间保存日志 修改格式可以按小时、按天、月来保存-->
-            <fileNamePattern>logs/info/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logging.path}/info/%d{yyyy-MM-dd}.log</fileNamePattern>
             <!--保存时长-->
             <MaxHistory>30</MaxHistory>
             <!--文件大小-->
@@ -49,12 +49,12 @@
         <!--滚动策略-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--路径-->
-            <fileNamePattern>logs/error/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logging.path}/error/%d{yyyy-MM-dd}.log</fileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
     </appender>
 
-    <root level="${logging.level}">
+    <root level="${logging.level.root}">
         <appender-ref ref="consoleLog"/>
         <appender-ref ref="fileErrorLog" />
         <appender-ref ref="fileInfoLog" />

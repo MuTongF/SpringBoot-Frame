@@ -18,14 +18,15 @@ public class Swagger2Configuration {
 
     //是否开启swagger，正式环境一般是需要关闭的，可根据Springboot的多环境配置进行设置
     @Value(value = "${swagger.enabled}")
-    Boolean swaggerEnabled;
+    private boolean swaggerEnabled;
 
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .enable(swaggerEnabled)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jidu"))//扫描Controller
+                .apis(RequestHandlerSelectors.basePackage("com.mutong"))//扫描Controller
                 .paths(PathSelectors.any())
                 .build().pathMapping("/");
     }

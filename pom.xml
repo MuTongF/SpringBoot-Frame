@@ -11,8 +11,8 @@
     <groupId>com.mutong</groupId>
     <artifactId>mutong</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>aladdin</name>
-    <description>阿拉丁</description>
+    <name>mutong</name>
+    <description>mutong</description>
 
     <properties>
         <java.version>1.8</java.version>
