@@ -1,23 +1,4 @@
-# 服务器配置
-server:
-  port: 8080
-  servlet:
-    context-path: /mutong
-
+################指定环境:[dev]开发环境,[prd]生产环境
 spring:
-#  数据库配置
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
-#  thymeleaf配置
-  thymeleaf:
-    cache: false
-# mybatis
-mybatis:
-  mapper-locations: classpath*:***/dao/**/*.xml
-  configuration:
-#  在控制台打印sql语句
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
+  profiles:
+    active: dev

@@ -1,0 +1,36 @@
+###########################################开发环境
+server: ###### 服务器配置
+  port: 8080  #端口号
+  servlet:
+    context-path: /mutong #项目名
+
+spring: ###### 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  thymeleaf:  ###### thymeleaf配置
+    cache: false
+
+mybatis:  ###### mybatis
+  mapper-locations: classpath*:***/dao/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #  在控制台打印sql语句
+
+logging:  #####日志
+  path: logs  #存放位置
+  level:
+    root: info  #打印等级
+  config: classpath:config/logback/logback-dev.xml
+#变量
+myproject:
+  projectName:  项目名
+swagger:
+  enabled: true #swagger是否开启
+upload:
+  filePath: C:/upload/image/  #图片上传存放路径
+  ueditorPath: C:/upload/image/ueditor/ #ueditor文件存放位置
+
+
+

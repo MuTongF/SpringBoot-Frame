@@ -2,7 +2,9 @@
 <configuration>
     <!-- 属性文件:在properties文件中找到对应的配置项 -->
     <springProperty scope="context" name="logging.path" source="logging.path"/>
+    <springProperty scope="context" name="logging.level.root" source="logging.level.root"/>
     <contextName>mutong</contextName>
+
 
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -56,8 +58,8 @@
 
     <root level="${logging.level.root}">
         <appender-ref ref="consoleLog"/>
-        <appender-ref ref="fileErrorLog" />
-        <appender-ref ref="fileInfoLog" />
+        <appender-ref ref="fileErrorLog"/>
+        <appender-ref ref="fileInfoLog"/>
     </root>
 
 
