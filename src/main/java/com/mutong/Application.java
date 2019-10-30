@@ -8,10 +8,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @MapperScan("com.mutong.dao")//扫描mapper层
 @EnableScheduling //启动定时器
-public class AladdinApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(AladdinApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
