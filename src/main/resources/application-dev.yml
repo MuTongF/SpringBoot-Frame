@@ -12,6 +12,7 @@ spring: ###### 数据库配置
     password: root
   thymeleaf:  ###### thymeleaf配置
     cache: false
+    suffix: .html
 
 mybatis:  ###### mybatis
   mapper-locations: classpath*:***/dao/**/*.xml
