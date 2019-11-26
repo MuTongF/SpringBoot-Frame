@@ -54,6 +54,14 @@
     <script src="assets/js/respond.min.js" th:src="@{/assets/plugins/layui/layui.all.js}"></script>
     <script src="assets/js/dataformat.js" th:src="@{/assets/js/dataformat.js}"></script>
     <th:block th:replace="${links}" />
+
+    <!--定义一些公共变量-->
+    <script>
+        //localStorage
+        // var adminId = JSON.parse(localStorage.getItem("admin")).id;
+        /*项目地址*/
+        var baseUrl = "[[${#servletContext.contextPath}]]";
+    </script>
 </head>
 <body>
 

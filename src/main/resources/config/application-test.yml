@@ -1,8 +1,8 @@
-###########################################生产环境
+###########################################开发环境
 server: ###### 服务器配置
-  port: 80  #端口号
+  port: 8080  #端口号
   servlet:
-    context-path: /mutong #项目名
+    context-path: /mutong #项目路径
 
 spring: ###### 数据库配置
   datasource:
@@ -12,6 +12,7 @@ spring: ###### 数据库配置
     password: root
   thymeleaf:  ###### thymeleaf配置
     cache: false
+    suffix: .html
 
 mybatis:  ###### mybatis
   mapper-locations: classpath*:***/dao/**/*.xml
@@ -21,14 +22,16 @@ mybatis:  ###### mybatis
 logging:  #####日志
   path: logs  #存放位置
   level:
-    root: info #打印等级
-  config: classpath:config/logback/logback-prd.xml
+    root: info  #打印等级
+  config: classpath:config/logback/logback-dev.xml
 #变量
 myproject:
   projectName:  项目名
 swagger:
-  enabled: false #swagger是否开启
+  enabled: true #swagger是否开启
 upload:
   filePath: /usr/mutong/upload/image/  #图片上传存放路径
   ueditorPath: /usr/mutong/upload/ueditor/ #ueditor文件存放位置
+
+
 
