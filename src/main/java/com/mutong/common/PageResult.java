@@ -11,7 +11,7 @@ public class PageResult<T> {
     /*每页条数*/
     private Integer limit;
     /*总条数*/
-    private Integer count;
+    private long count;
     /*查询到的数据*/
     private List<T> list;
 
@@ -47,11 +47,11 @@ public class PageResult<T> {
         this.limit = limit;
     }
 
-    public Integer getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(long count) {
         this.count = count;
     }
 
