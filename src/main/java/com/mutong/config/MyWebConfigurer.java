@@ -18,7 +18,7 @@ public class MyWebConfigurer implements WebMvcConfigurer {
   @Value("${upload.filePath}")
   private String filePath;
 
-  @Value("${spring.profiles.action}")
+  @Value("${spring.profiles.active}")
   private String action;
 
   // 这个方法是用来配置静态资源的，比如html，js，css，等等
