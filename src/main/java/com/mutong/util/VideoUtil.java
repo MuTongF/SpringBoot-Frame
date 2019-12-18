@@ -1,3 +1,4 @@
+/*
 package com.mutong.util;
 
 import org.apache.commons.lang.StringUtils;
@@ -27,10 +28,12 @@ public class VideoUtil {
         }
     }
 
-    /**
+    */
+/**
      * @throws IOException void
      * @Description: 获取视频截图
-     */
+     *//*
+
     public static Map<String, Object> getScreenshot(String filePath) throws Exception {
 
         System.out.println("截取视频截图开始：" + TimeUtil.GetStringDate(new Date()));
@@ -84,12 +87,14 @@ public class VideoUtil {
         return result;
     }
 
-    /**
+    */
+/**
      * @param src
      * @param angel 视频旋转度
      * @return BufferedImage
      * @Description: 根据视频旋转度来调整图片
-     */
+     *//*
+
     public static BufferedImage rotate(BufferedImage src, int angel) {
         int src_width = src.getWidth(null);
         int src_height = src.getHeight(null);
@@ -105,12 +110,14 @@ public class VideoUtil {
     }
 
 
-    /**
+    */
+/**
      * @param src
      * @param angel
      * @return Rectangle
      * @Description: 计算图片旋转大小
-     */
+     *//*
+
     public static Rectangle calcRotatedSize(Rectangle src, int angel) {
         if (angel >= 90) {
             if (angel / 90 % 2 == 1) {
@@ -132,3 +139,4 @@ public class VideoUtil {
         return new Rectangle(new Dimension(des_width, des_height));
     }
 }
+*/
