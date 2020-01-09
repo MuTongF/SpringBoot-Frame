@@ -5,19 +5,18 @@ spring:
   profiles:
     active: dev
 ###################################################
-###### 服务器配置
-###################################################
-server:
-  port: 8080  #端口号
-###################################################
 ###### 数据库配置
 ###################################################
-spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+###################################################
+###### 服务器配置
+###################################################
+server:
+  port: 8080  #端口号
 ###################################################
 mybatis:  ###### mybatis
   mapper-locations: classpath*:***/dao/**/*.xml
