@@ -33,7 +33,7 @@ public class MyWebConfigurer implements WebMvcConfigurer {
         .addResourceHandler("/webjars/**")
         .addResourceLocations("classpath:/META-INF/resources/webjars/");
     // 配置图片访问路径
-    registry.addResourceHandler("/image/**").addResourceLocations("file:" + filePath);
+    registry.addResourceHandler("/upload/**").addResourceLocations("file:" + filePath);
   }
 
   // 这个方法用来注册拦截器，我们自己写好的拦截器需要通过这里添加注册才能生效
